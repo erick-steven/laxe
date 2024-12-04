@@ -1,0 +1,191 @@
+/* Section Styling */
+.booking-section {
+    position: relative;
+    min-height: 110vh; /* Ensures the section takes full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns content to left and right */
+    background: url('imagehero/pexels-zachtheshoota-1838640.jpg') center/cover no-repeat;
+    animation: bg-slider 15s infinite; /* Apply the background slider animation */
+    background-size: cover;
+  }
+  
+  /* Dark Overlay */
+  .booking-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional, adds a dark tint over the background */
+    z-index: 1;
+  }
+  
+  /* Flex Container to align items horizontally */
+  .booking-section .container {
+    position: relative;
+    z-index: 2; /* Makes sure text is above the overlay */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Places content on the left and right */
+  }
+  
+  /* Left Content (Text and Button) */
+  .left-content {
+    color: white;
+    padding-right: 30px; /* Adds space between text and form */
+  }
+  
+  /* Right Content (Booking Form) */
+  .right-content {
+    display: flex;
+    justify-content: flex-end; /* Aligns the form to the right side */
+    align-items: center;
+    width: 50%; /* Ensures the form stays on the right */
+  }
+  
+  /* Background Slider Animation */
+  @keyframes bg-slider {
+    0% {
+      background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg');
+    }
+    33% {
+      background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg'); /* Another image if available */
+    }
+    66% {
+      background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg'); /* Another option */
+    }
+    100% {
+      background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg');
+    }
+  }
+  /* Section Styling */
+  .booking-section {
+    position: relative;
+    min-height: 110vh; /* Ensures the section takes full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns content to left and right */
+    background: url('imagehero/pexels-zachtheshoota-1838640.jpg') center/cover no-repeat;
+    animation: bg-slider 15s infinite; /* Apply the background slider animation */
+    background-size: cover;
+  }
+  
+  /* Dark Overlay */
+  .booking-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional, adds a dark tint over the background */
+    z-index: 1;
+  }
+  
+  /* Flex Container to align items horizontally */
+  .booking-section .container {
+    position: relative;
+    z-index: 2; /* Makes sure text is above the overlay */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Places content on the left and right */
+    width: 100%;
+    padding: 0 50px;
+  }
+  
+  /* Left Content (Text and Button) */
+  .left-content {
+    color: white;
+    padding-right: 30px; /* Adds space between the text and form */
+    flex: 1; /* Ensures it takes the remaining space on the left */
+  }
+  
+  /* Right Content (Booking Form) */
+  .right-content {
+    display: flex;
+    justify-content: flex-end; /* Aligns the form to the right side */
+    align-items: center;
+    width: 50%; /* Ensures the form stays on the right */
+  }
+  /* Form Styling (Glass Effect) */
+  /* Form Styling with increased transparency */
+  .booking-form {
+    background: rgba(11, 18, 31, 0.3); /* More transparent background for the "glass" effect */
+    color: white; /* White text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for the form */
+    padding: 20px; /* Padding inside the form */
+    width: 100%; /* Ensure it occupies full width inside the container */
+    max-width: 500px; /* Maximum width for the form */
+    backdrop-filter: blur(15px); /* Apply a stronger blur effect to the background */
+    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border to make it blend more with the transparency */
+    margin-top: 20px; /* Space from the top */
+   margin: 20px;
+  }
+  
+  /* Form Heading */
+  .booking-form h4 {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  /* Form Fields */
+  .booking-form .form-control,
+  .booking-form .form-select {
+    background: rgba(10, 24, 37, 0.479); /* Semi-transparent dark background for inputs */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 50px; /* Height of form fields */
+    margin-bottom: 15px; /* Space between fields */
+    padding-left: 15px; /* Padding inside the input fields */
+  }
+  
+  /* Placeholder Styling */
+  .booking-form .form-control::placeholder,
+  .booking-form .form-select::placeholder {
+    color: #d3d3d3; /* Placeholder text color */
+  }
+  
+  /* Focus State */
+  .booking-form .form-control:focus,
+  .booking-form .form-select:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #ffc107; /* Focus state with a yellow border */
+  }
+  
+  /* Button Styling */
+  .booking-form .btn-warning {
+    background-color: #ffc107; /* Yellow button */
+    border: none;
+    color: black;
+    font-size: 16px;
+    padding: 12px 0; /* Ensures the button is tall enough */
+  }
+  
+  .booking-form .btn-warning:hover {
+    background-color: #e0a800; /* Slightly darker yellow on hover */
+  }
+  
+  
+  /* Button Styling */
+  .btn-warning {
+    margin-top: 20px; /* Space above the button */
+    padding: 10px 20px;
+  }
+  
+  /* Aligning the Left Text Content */
+  .left-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  /* Content inside Left Text Section */
+  .left-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  

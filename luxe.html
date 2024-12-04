@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation with Bootstrap</title>
+  <!-- Bootstrap CSS -->
+  <link
+  
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- AOS Library CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  >
+
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  rel="stylesheet"
+>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      padding: 100px 0;
+      min-height: 100vh;
+    }
+     
+    .section-2 { background-color: #e9ecef; }
+    .section-3 { background-color: #dee2e6; }
+    .section-4 { background-color: #ced4da; }
+    .section-5 { background-color: #bdbdad; }
+    .section-6 { background-color: #adb5bd; }
+    .section-7 { background-color: #adb5bd; }
+    .section-8 { background-color: #adb5bd; }
+    .section-9 { background-color: #adb5bd; }
+/* Section Styling */
+/* Section Styling */
+/* Section Styling */
+/* Section Styling */
+
+
+/* CSS */
+.logo-img {
+  width: 80px;  /* Adjust size */
+  height: 80px; /* Adjust size */
+}
+
+.booking-section {
+  position: relative;
+  min-height: 110vh; /* Ensures the section takes full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aligns content to left and right */
+  background: url('imagehero/pexels-zachtheshoota-1838640.jpg') center/cover no-repeat;
+  animation: bg-slider 15s infinite; /* Apply the background slider animation */
+  background-size: cover;
+  color: white;
+}
+
+/* Dark Overlay */
+.booking-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional, adds a dark tint over the background */
+  z-index: 1;
+}
+
+/* Flex Container to align items horizontally */
+.booking-section .container {
+  position: relative;
+  z-index: 2; /* Makes sure text is above the overlay */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Places content on the left and right */
+  margin-top: 100px;
+ 
+}
+
+/* Left Content (Text and Button) */
+.left-content {
+  color: white;
+  padding-right: 40px; /* Adds space between text and form */
+  
+}
+
+/* Right Content (Booking Form) */
+.right-content {
+  display: flex;
+  justify-content: flex-end; /* Aligns the form to the right side */
+  align-items: center;
+  width: 50%; /* Ensures the form stays on the right */
+  color: white;
+}
+
+/* Background Slider Animation */
+@keyframes bg-slider {
+  0% {
+    background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg');
+  }
+  33% {
+    background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg'); /* Another image if available */
+  }
+  66% {
+    background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg'); /* Another option */
+  }
+  100% {
+    background-image: url('imagehero/pexels-zachtheshoota-1838640.jpg');
+  }
+}
+/* Section Styling */
+.booking-section {
+  position: relative;
+  min-height: 110vh; /* Ensures the section takes full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aligns content to left and right */
+  background: url('imagehero/pexels-zachtheshoota-1838640.jpg') center/cover no-repeat;
+  animation: bg-slider 15s infinite; /* Apply the background slider animation */
+  background-size: cover;
+}
+
+/* Dark Overlay */
+.booking-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional, adds a dark tint over the background */
+  z-index: 1;
+}
+
+/* Flex Container to align items horizontally */
+.booking-section .container {
+  position: relative;
+  z-index: 2; /* Makes sure text is above the overlay */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Places content on the left and right */
+  width: 100%;
+  padding: 0 50px;
+}
+
+/* Left Content (Text and Button) */
+.left-content {
+  color: white;
+  padding-right: 30px; /* Adds space between the text and form */
+  flex: 1; /* Ensures it takes the remaining space on the left */
+}
+
+/* Right Content (Booking Form) */
+.right-content {
+  display: flex;
+  justify-content: flex-end; /* Aligns the form to the right side */
+  align-items: center;
+  width: 50%; /* Ensures the form stays on the right */
+}
+/* Form Styling (Glass Effect) */
+/* Form Styling with increased transparency */
+.booking-form {
+  background: rgba(11, 18, 31, 0.3); /* More transparent background for the "glass" effect */
+  color: white; /* White text */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for the form */
+  padding: 20px; /* Padding inside the form */
+  width: 100%; /* Ensure it occupies full width inside the container */
+  max-width: 500px; /* Maximum width for the form */
+  backdrop-filter: blur(15px); /* Apply a stronger blur effect to the background */
+  -webkit-backdrop-filter: blur(15px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border to make it blend more with the transparency */
+  margin-top: 20px; /* Space from the top */
+ margin: 20px;
+}
+
+/* Form Heading */
+.booking-form h4 {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Form Fields */
+.booking-form .form-control,
+.booking-form .form-select {
+  background: rgba(10, 24, 37, 0.479); /* Semi-transparent dark background for inputs */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  height: 50px; /* Height of form fields */
+  margin-bottom: 15px; /* Space between fields */
+  padding-left: 15px; /* Padding inside the input fields */
+}
+
+/* Placeholder Styling */
+.booking-form .form-control::placeholder,
+.booking-form .form-select::placeholder {
+  color: #d3d3d3; /* Placeholder text color */
+}
+
+/* Focus State */
+.booking-form .form-control:focus,
+.booking-form .form-select:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #ffc107; /* Focus state with a yellow border */
+}
+
+/* Button Styling */
+.booking-form .btn-warning {
+  background-color: #ffc107; /* Yellow button */
+  border: none;
+  color: black;
+  font-size: 16px;
+  padding: 12px 0; /* Ensures the button is tall enough */
+}
+
+.booking-form .btn-warning:hover {
+  background-color: #e0a800; /* Slightly darker yellow on hover */
+}
+
+
+/* Button Styling */
+.btn-warning {
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px;
+}
+
+/* Aligning the Left Text Content */
+.left-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+/* Content inside Left Text Section */
+.left-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* Section Styling */
+.section-2 {
+  padding: 150px 0;
+  background-color: #f9f9f9;
+  color: #333;
+  color: white;
+}
+
+/* Left Side Text Content */
+.text-content h1 {
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.text-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.text-content .btn {
+  padding: 20px 40px;
+  font-size: 16px;
+  background-color: #ffc107;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.text-content .btn:hover {
+  background-color: #e0a800;
+}
+
+/* Right Side Image */
+.image-content img {
+  border-radius: 10px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+ 
+}
+
+#section-3 {
+  background: url('imagehero/pexels-zachtheshoota-1838640.jpg') no-repeat center center/cover;
+  position: relative;
+  padding: 50px 0;
+  color: white;
+}
+
+#section-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.795); /* Overlay color */
+  z-index: 1;
+}
+
+#section-3 .container {
+  position: relative;
+  z-index: 2;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+}
+
+.service-item {
+  background: rgba(70, 62, 62, 0.315); /* Transparent card */
+  backdrop-filter: blur(5px);
+  width: calc(33.333% - 20px); /* 3 cards per row with gaps */
+  max-width: 450px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h5 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.service-item p {
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}
+/* Section-4 Gallery Styling */
+#section-4 {
+  background-color: #31101080; /* Light gray background */
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Gallery item styling */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 300px; /* Fixed height for uniformity */
+}
+
+/* Ensure all images have the same size */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the container while maintaining aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for images */
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .gallery-item {
+    margin-bottom: 30px;
+  }
+}
+
+[data-aos="fade-left"] {
+  animation: fade-left 1s ease-out;
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Section Styling */
+/* Section Styling */
+/* Section Styling */
+#section-5 {
+  padding: 60px 20px;
+  background-color: #f9f9f9; /* Light grey background */
+  text-align: center;
+}
+
+#section-5 h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #101c30; /* Dark blue */
+}
+
+#section-5 p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #666; /* Grey text */
+}
+
+/* Flexbox Grid - 3 Items on Top, 2 Items Below */
+.reasons .row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 0;
+}
+.top-row .reason-item {
+  flex: 1.5; /* Make the top row items wider */
+  max-width: 600px; /* Increase the maximum width for the top row items */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.bottom-row .reason-item {
+  flex: 1; /* Keep the bottom row narrower */
+  max-width: 500px; /* Maintain a smaller max width for bottom items */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover effects for both rows */
+.top-row .reason-item:hover,
+.bottom-row .reason-item:hover {
+  background-color: #ffc107; /* Change to gold on hover */
+  color: #fff; /* Optional: Change text color to white on hover */
+  border-radius: 10px; /* Optional: Add rounded corners on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+}
+
+
+
+.reason-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 40px;
+}
+
+.reason-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(114, 42, 42, 0.2);
+}
+
+.reason-icon {
+  font-size: 40px;
+  color:gold; /* Bright blue */
+}
+
+.reason-item h3 {
+  font-size: 22px;
+  margin-top: 15px;
+  color: #007bff; /* Matches the icon color */
+}
+
+.reason-item p {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #555; /* Slightly darker grey */
+}
+
+/* Animation */
+[data-aos="fade-up"] {
+  animation: fade-up 1s ease-out;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/* Section Styling */
+/*/* Section Styling */
+#section-6 {
+  padding: 60px 20px;
+  background-color: #f8f9fa; /* Light background */
+  margin: 50px;
+}
+
+/* Header and Paragraph Styling */
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Comment Form Styling */
+.comment-form {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%; /* Ensure textarea takes up full width */
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 16px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #007bff;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #ffd900;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Comments Section Styling */
+.comments-section {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.comments-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.comment-item {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-text {
+  font-size: 16px;
+  color: #555;
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+  animation: fade-up 1s ease-out;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comment-form, .comments-section {
+    margin-bottom: 20px; /* Space between form and comments */
+  }
+}
+
+
+#section-7 {
+  padding: 50px 0;
+  background-color: #f8f9fa; /* Light background */
+}
+
+.container {
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: #333;
+}
+
+p {
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #555;
+}
+
+.google-map-container {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-aos="fade-up"] {
+  animation: fade-up 1s ease-out;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+/* Section 9 - Kitchen & Lounge Styling */
+#section-9 {
+  background-color: #ffffff; /* White background */
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p.lead {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.kitchen-item, .lounge-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.kitchen-item img, .lounge-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.kitchen-item h3, .lounge-item h3 {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #007bff;
+}
+
+.kitchen-item p, .lounge-item p {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .kitchen-item, .lounge-item {
+    margin-bottom: 30px;
+  }
+}
+
+
+
+
+
+#footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footer-logo-section,
+.footer-icons-section,
+.footer-form-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  max-width: 100px;
+  margin-bottom: 10px;
+
+}
+
+.footer-description {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.footer-icons-section h4,
+.footer-form-section h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icon {
+  color: #fff;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.footer-icon:hover {
+  color: #007bff;
+}
+
+.footer-form {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+  max-width: 300px;
+}
+
+.footer-form button {
+  padding: 10px 20px;
+  background-color: #eec40a;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-form button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo-section,
+  .footer-icons-section,
+  .footer-form-section {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+/* Section 8 - Accommodation Styling */
+#section-8 {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p.lead {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.accommodation-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.accommodation-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.accommodation-item h3 {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #007bff;
+}
+
+.accommodation-item p {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .accommodation-item {
+    margin-bottom: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-black bg-white fixed-top">
+    <div class="container-fluid">
+      <!-- Logo with image -->
+      <a class="navbar-brand ms-3" href="#">
+        
+        <a class="navbar-brand ms-3" href="#">
+          <img src="imagehero/pexels-zachtheshoota-1838640.jpg" alt="MyBrand" width="75" height="70" class="d-inline-block align-text-top rounded-circle" style="border: 3px solid gold;">
+          <span style="font-weight: bold; color: gold; font-size: 30px;">LUXE</span>
+          <span style="font-weight: bold; color: gold; font-size: 20px;">APARTMENT</span>
+        </a>
+        
+        
+      <!-- Navbar toggler for small screens -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navbar content -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Primary navigation links aligned to the left -->
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#section-1" style="font-weight: bold;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-2" style="font-weight: bold;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-3" style="font-weight: bold;">Services</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: bold;">
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#section-4" style="font-weight: bold;">Portfolio</a></li>
+              <li><a class="dropdown-item" href="#section-5" style="font-weight: bold;">Contact</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#section-6" style="font-weight: bold;">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+      
+  
+        <!-- Contact Info Section in between links and social media -->
+        <div class="navbar-contact-info mx-3 d-flex align-items-center text-black">
+          <span class="me-3">Call us: (12) 345 67890</span>
+          <span class="mx-3">|</span>
+          <span class="me-3">info.colorlib@gmail.com</span>
+          <span class="mx-3">|</span>
+          <span class="ms-3">EN</span>
+        </div>
+  
+        <!-- Social media icons aligned to the right -->
+        <div class="ms-3">
+          <a href="#" class="text-black me-2" style="font-size: 30px;"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-black me-2" style="font-size: 30px;"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-black" style="font-size: 30px;"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+      
+        <!-- Social media icons aligned to the right -->
+        
+  <section class="booking-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="left-content">
+        <h1 style="color: white;">AWAY FROM MONOTONOUS  </h1>
+        <p style="font-weight: bold; color: rgb(255, 255, 255);">Relax Your Mind</p>
+        <p style="font-weight: bold; color: rgb(245, 245, 245);">If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
+        <button style="background-color: rgb(253, 215, 1); color: black; border: 2px solid gold; font-weight: bold; padding: 10px 20px; text-transform: uppercase;" class="btn-warning">Get Started</button>
+        
+      </div>
+  
+      <div class="right-content" style="margin-right: -100px; width: 40%;"> 
+        <form class="booking-form">
+          <h4>Book Your Room</h4>
+          <div class="form-group">
+            <input type="date" class="form-control" placeholder="dd/---/yyyy">
+          </div>
+          <div class="form-group">
+            <input type="date" class="form-control" placeholder="dd/---/yyyy">
+          </div>
+          <div class="form-group">
+            <select class="form-select">
+              <option>Adults</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-select">
+              <option>Children</option>
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Phone Number or Email">
+          </div>
+          <button style="background-color: rgb(253, 215, 1); color: black; border: 2px solid gold; font-weight: bold; padding: 10px 20px; text-transform: uppercase;" class="btn-warning">Get Started</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section id="section-2" class="section-2" data-aos="fade-left">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Side: Text Content -->
+        <div class="col-md-6">
+          <div class="text-content">
+            <h1 style="color: black;">Welcome!</h1>
+            <p style="color: black;">
+              Far far away, behind the word mountains, far from the countries 
+              Vokalia and Consonantia, there live the blind texts. Separated they live 
+              in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+            </p>
+            
+            <a href="#" class="btn btn-warning">SEE VIDEO</a>
+          </div>
+        </div>
+  
+        <!-- Right Side: Single Image -->
+        <div class="col-md-6">
+          <div class="image-content">
+            <img src="imagehero/pexels-donaldtong94-189333.jpg" class="img-fluid" alt="Right Side Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="section-3" class="section-3" data-aos="zoom-in">
+    <div class="container text-center">
+      <h1 style="font-weight: bold; text-align: center;">Our Services</h1>
+      <p style="font-weight: bold; text-align: center;">We offer a wide range of services to make your stay comfortable and memorable.</p>
+      <div class="services">
+        <div class="service-item">
+          <i class="fas fa-bed service-icon"></i>
+          <h3>Comfortable Rooms</h3>
+          <p>Enjoy spacious and well-furnished rooms with all the amenities you need for a relaxing stay.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-utensils service-icon"></i>
+          <h3>Restaurant</h3>
+          <p>Indulge in delicious meals at our on-site restaurant, offering a variety of cuisines.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-wifi service-icon"></i>
+          <h3>Free Wi-Fi</h3>
+          <p>Stay connected with high-speed internet available throughout the hotel or apartment.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-swimming-pool service-icon"></i>
+          <h3>Swimming Pool</h3>
+          <p>Relax and unwind in our outdoor swimming pool, perfect for both adults and children.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-spa service-icon"></i>
+          <h3>Spa & Wellness</h3>
+          <p>Rejuvenate your body and mind with our luxurious spa and wellness services.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-parking service-icon"></i>
+          <h3>Free Parking</h3>
+          <p>Enjoy free and secure parking for all guests, with easy access to the hotel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section id="section-8" class="section-8 py-5" data-aos="fade-up">
+    <div class="container text-center">
+      <h2>Our Accommodation</h2>
+      <p class="lead">Experience comfort and luxury in our wide range of rooms and suites.</p>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="accommodation-item">
+            <img src="imagehero/pexels-zachtheshoota-1838640.jpg" alt="Single Room" class="img-fluid mb-3">
+            <h3>Single Room</h3>
+            <p>A cozy room designed for solo travelers with all the essential amenities for a relaxing stay.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="accommodation-item">
+            <img src="imagehero/pexels-donaldtong94-189333.jpg" alt="Double Room" class="img-fluid mb-3">
+            <h3>Double Room</h3>
+            <p>Spacious rooms for two guests, featuring comfortable beds and modern amenities for your comfort.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="accommodation-item">
+            <img src="imagehero/pexels-dodogr8-1028379.jpg" alt="Suite" class="img-fluid mb-3">
+            <h3>Suite</h3>
+            <p>Our luxury suites offer a premium experience with additional space and top-notch amenities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="section-9" class="section-9 py-5" data-aos="fade-up">
+    <div class="container text-center">
+      <h2>Kitchen & Lounge</h2>
+      <p class="lead">Relax and dine in our modern kitchen and lounge area, equipped with all the essentials.</p>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="kitchen-item">
+            <img src="imagehero/pexels-donaldtong94-189333.jpg" alt="Kitchen Area" class="img-fluid mb-3">
+            <h3>Fully Equipped Kitchen</h3>
+            <p>Our kitchen is equipped with state-of-the-art appliances, offering everything you need to cook gourmet meals.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="lounge-item">
+            <img src="imagehero/pexels-donaldtong94-189333.jpg" alt="Lounge Area" class="img-fluid mb-3">
+            <h3>Comfortable Lounge</h3>
+            <p>Relax and unwind in our cozy lounge area, perfect for reading, socializing, or enjoying some quiet time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section id="section-4" class="section-4" data-aos="fade-left">
+    <div class="container text-center py-5">
+      <h2>Our Gallery</h2>
+      <p class="lead">Explore our gallery showcasing our services, facilities, and experiences.</p>
+      
+      <!-- Gallery Section -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="gallery-item">
+            <img src="imagehero/pexels-donaldtong94-189333.jpg" class="img-fluid rounded" alt="Image 1">
+          </div>
+        </div>
+    
+        <div class="col-md-4 mb-4">
+          <div class="gallery-item">
+            <img src="imagehero/pexels-zachtheshoota-1838640.jpg" class="img-fluid rounded" alt="Image 2">
+          </div>
+        </div>
+    
+        <div class="col-md-4 mb-4">
+          <div class="gallery-item">
+            <img src="imagehero/pexels-zachtheshoota-1838640.jpg" class="img-fluid rounded" alt="Image 3">
+          </div>
+        </div>
+    
+        <div class="col-md-4 mb-4">
+          <div class="gallery-item">
+            <img src="imagehero/pexels-zachtheshoota-1838640.jpg" class="img-fluid rounded" alt="Image 4">
+          </div>
+        </div>
+    
+        <div class="col-md-4 mb-4">
+          <div class="gallery-item">
+            <img src="imagehero/pexels-zachtheshoota-1838640.jpg" class="img-fluid rounded" alt="Image 5">
+          </div>
+        </div>
+    
+        <div class="col-md-4 mb-4">
+          <div class="gallery-item">
+            <img src="imagehero/pexels-zachtheshoota-1838640.jpg" class="img-fluid rounded" alt="Image 6">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="section-5" class="section-5" data-aos="fade-up">
+    <div class="container text-center">
+      <h1>Why Choose Us</h1>
+      <p>Discover the reasons why our services stand out. We offer quality, comfort, and an unforgettable experience.</p>
+      <div class="reasons">
+        <!-- Top Row: 3 Items -->
+        <div class="row top-row">
+          <div class="col-md-4 reason-item">
+            <i class="fas fa-hands-helping reason-icon"></i>
+            <h3>Exceptional Service</h3>
+            <p>Our team is dedicated to providing outstanding customer service, ensuring your stay is as comfortable as possible.</p>
+          </div>
+          <div class="col-md-4 reason-item">
+            <i class="fas fa-cogs reason-icon"></i>
+            <h3>Modern Amenities</h3>
+            <p>We offer state-of-the-art facilities, from high-speed Wi-Fi to luxurious spa treatments, to ensure your convenience and relaxation.</p>
+          </div>
+          <div class="col-md-4 reason-item">
+            <i class="fas fa-map-marker-alt reason-icon"></i>
+            <h3>Prime Location</h3>
+            <p>Located in the heart of the city, our establishment is near major attractions, restaurants, and transportation hubs.</p>
+          </div>
+        </div>
+        <!-- Bottom Row: 2 Items -->
+        <div class="row bottom-row">
+          <div class="col-md-6 reason-item">
+            <i class="fas fa-users reason-icon"></i>
+            <h3>Family-Friendly</h3>
+            <p>Our services cater to families of all sizes, offering kid-friendly amenities and activities for all ages.</p>
+          </div>
+          <div class="col-md-6 reason-item">
+            <i class="fas fa-check-circle reason-icon"></i>
+            <h3>Quality Assurance</h3>
+            <p>We maintain high standards of quality in everything we offer, ensuring that every guest has an excellent experience with us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="section-6" class="section-6" data-aos="fade-up">
+    <div class="container py-5">
+      <div class="row">
+        <!-- Left Column: Comment Form -->
+        <div class="col-md-6">
+          <h1 class="text-center display-4">Share Your Experience</h1>
+          <p class="lead text-center">We'd love to hear your thoughts! Please leave your comments below.</p>
+  
+          <!-- Comment Form -->
+          <form id="comment-form" class="comment-form" onsubmit="submitComment(event)">
+            <div class="row mb-4">
+              <!-- Name Input -->
+              <div class="col-md-12 mb-3">
+                <input type="text" id="user-name" class="form-control" placeholder="Enter your name" required>
+              </div>
+  
+              <!-- Email Input -->
+              <div class="col-md-12 mb-3">
+                <input type="email" id="user-email" class="form-control" placeholder="Enter your email" required>
+              </div>
+  
+              <!-- Comment Input -->
+              <div class="col-md-12 mb-3">
+                <textarea id="user-comment" class="form-control" placeholder="Write your comment here..." rows="4" required></textarea>
+              </div>
+            </div>
+  
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+        </div>
+  
+        <!-- Right Column: Display Comments -->
+        <div class="col-md-6">
+          <div class="comments-section">
+            <h2 class="text-center">User Comments</h2>
+            <div id="comments-list">
+              <!-- User comments will be dynamically added here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+
+
+  <section id="section-7" class="section-7" data-aos="fade-up">
+    <div class="container text-center">
+      <h1>Find Us Here</h1>
+      <p>View our location on the map below:</p>
+      
+      <!-- Google Map Embed -->
+      <div class="google-map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.383905331573!2d-122.08385148468117!3d37.421999279826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb5f4b907799%3A0x72ed9d9fa5b47838!2sGoogleplex!5e0!3m2!1sen!2sus!4v1634245877043!5m2!1sen!2sus" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <!-- Logo and Company Info -->
+      <div class="footer-logo-section">
+        <img src="imagehero/pexels-zachtheshoota-1838640.jpg" alt="Your Logo" class="footer-logo">
+        <p class="footer-description">Your company description goes here. We provide exceptional service and experiences for all our guests.</p>
+      </div>
+  
+      <!-- Navigation Links -->
+      <div class="footer-nav-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social Media Icons -->
+      <div class="footer-icons-section">
+        <h4>Follow Us</h4>
+        <div class="footer-icons">
+          <a href="https://facebook.com" target="_blank" class="footer-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="footer-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="footer-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="footer-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" class="footer-icon">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Update Form -->
+      <div class="footer-form-section">
+        <h4>Subscribe for Updates</h4>
+        <form id="footer-form" class="footer-form">
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <button type="submit" class="submit-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Library JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init();
+  </script>
+
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<!-- JavaScript to handle form submission and display comments -->
+<script>
+  // Function to handle form submission and display comments
+  function submitComment(event) {
+    event.preventDefault();  // Prevent form submission from refreshing the page
+
+    // Get values from form fields
+    const name = document.getElementById('user-name').value;
+    const email = document.getElementById('user-email').value;
+    const comment = document.getElementById('user-comment').value;
+
+    // Validate input
+    if (!name || !email || !comment) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    // Create new comment div
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment');
+    commentDiv.classList.add('p-3');
+    commentDiv.classList.add('border');
+    commentDiv.classList.add('rounded');
+    commentDiv.classList.add('mb-3');
+
+    // Format and insert the comment content
+    commentDiv.innerHTML = `
+      <h5>${name} <small><i>${email}</i></small></h5>
+      <p>${comment}</p>
+    `;
+
+    // Append the new comment to the comments section
+    document.getElementById('comments-list').appendChild(commentDiv);
+
+    // Reset the form after submission
+    document.getElementById('comment-form').reset();
+  }
+</script>
+
+</body>
+</html>
